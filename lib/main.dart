@@ -1,10 +1,13 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:expense_tracker_flutter/widgets/expenses.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      home: Expenses(),
+    MaterialApp(
+      theme: ThemeData().copyWith(
+        scaffoldBackgroundColor: const Color.fromARGB(255, 220, 189, 252),
+      ),
+      home: const Expenses(),
     ),
   );
 }
