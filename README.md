@@ -19,6 +19,38 @@ Targeted and optimized strictly for **Android** and **iOS**.
 
 ---
 
+## Key Learnings & Flutter Concepts Mastered
+
+Throughout this module, several critical Flutter and Dart concepts were studied, practiced, and integrated into production-ready code:
+
+### 1. Form Handling & Controller Lifecycle
+- **`TextEditingController`**: Managed persistent user input across multiple fields without unnecessary UI rebuilds.
+- **Memory Leak Prevention (`dispose`)**: Learned the essential lifecycle discipline of overriding `dispose()` to free controllers from system memory when widgets are removed from the tree.
+- **Input Sanitization**: Implemented robust validation strategies combining `.trim()`, `.isEmpty`, `double.tryParse()`, and short-circuit boolean logic.
+
+### 2. Overlays, Dialogs & Asynchronous Programming
+- **`showModalBottomSheet`**: Configured modal overlays with `isScrollControlled: true` to allocate full available height and prevent soft keyboard overlap.
+- **Futures & `async`/`await`**: Resolved asynchronous date selection results from `showDatePicker` cleanly into state variables.
+- **`AlertDialog` & `Navigator.pop`**: Constructed native alert popups for validation warnings and managed stack routing using `Navigator.pop(context)`.
+
+### 3. High-Performance Lists & Gestures
+- **`ListView.builder`**: Utilized lazy loading to render lists on-demand for optimized memory usage and fluid scrolling.
+- **`Dismissible` & `ValueKey`**: Handled swipe-to-delete gestures while maintaining tight synchronization between the on-screen widget tree and internal Dart lists using explicit keys.
+- **`ScaffoldMessenger` & Undo Restorations**: Implemented dismissible `SnackBar` banners with `persist: false` and targeted list index restoration using `List.insert(index, element)`.
+
+### 4. Advanced Theming & Dark Mode
+- **`ColorScheme.fromSeed`**: Generated complete, harmonious Material 3 color palettes from a single root seed color for both light and dark modes.
+- **Granular Sub-theming**: Styled components uniformly across the app by configuring `appBarTheme`, `cardTheme` (`CardThemeData`), `elevatedButtonTheme`, and `textTheme`.
+- **Consuming Theme Tokens**: Accessed global themes directly in child widgets using `Theme.of(context)` for consistent typography and dynamic error tinting.
+- **System Theme Detection**: Inspected device settings dynamically using `MediaQuery.of(context).platformBrightness`.
+
+### 5. Dart Modeling & Functional Collections
+- **Named Constructors & Initializer Lists**: Implemented `ExpenseBucket.forCategory()` with initializer lists (`:`) to preprocess and filter data prior to class construction.
+- **Collection Operations**: Applied `.where()`, `.map()`, and collection `for-in` statements within both pure business logic and layout trees.
+- **Proportional UI Calculations**: Calculated dynamic bar chart heights using `FractionallySizedBox(heightFactor: ...)` based on real-time category sums.
+
+---
+
 ## Technical Architecture & Design Decisions
 
 ### 1. Data Models & Grouping
